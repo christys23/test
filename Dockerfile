@@ -1,7 +1,5 @@
 FROM ubuntu:latest
-COPY test/
-RUN chown root:root /test
-RUN chmod -R 777 /test
-##Entrypoint["/bin/bash"]
-RUN cp ["/test /bin"]
-CMD ["cat /tfile"]
+COPY tfile /tmp
+RUN chown root:root /tmp/tfile
+RUN chmod -R 777 /tmp/tfile
+CMD cat /tmp/tfile
